@@ -1,37 +1,46 @@
-<div id="modalRole"
-     class="modal-block modal-block-lg zoom-anim-dialog modal-header-color modal-block-primary modal-with-footer">
-    <section class="panel">
+@extends('layouts.master')
+@section('content')
+    @component('layouts.components.breadcrumb')
+        @slot('breadcrumb_title')
+            <h3>مدیریت نقش ها</h3>
+        @endslot
+        <li class="breadcrumb-item">
+            <a href="{{route('role.index')}}">مدیریت نقش ها</a>
+        </li>/
+        <li class="breadcrumb-item active">مدیریت نقش ها</li>
+    @endcomponent
+<div class="row">
+    <div class="card">
         <form action="{{$action}}" method="post" id="formRole"
               enctype="multipart/form-data">
             @csrf
             @isset($method)
                 @method($method)
             @endisset
-            <header class="panel-heading">
-                <div class="panel-actions">
-                    <a href="#" class="modal-dismiss"><i class="material-icons">close</i> </a>
+            <div class="card-header">
+                <div class="card-title">
+                    <h2 class="card-title">افزودن نقش</h2>
                 </div>
-                <h2 class="panel-title">{{$panelTitle}}</h2>
-            </header>
-            <div class="panel-body">
+            </div>
+            <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="title">عنوان</label>
                             <input type="text" class="form-control" placeholder="عنوان"
-                                   name="title" id="title" value="{{$role->title}}" required/>
+                                   name="title" id="title" value="{{$entity->name}}" required/>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="description">توضیح</label>
                             <input type="text" class="form-control" placeholder="توضیح"
-                                   name="description" id="description"  value="{{$role->description}}" required/>
+                                   name="description" id="description"  value="{{$entity->description}}" required/>
                         </div>
                     </div>
                 </div>
             </div>
-            <footer class="panel-footer">
+            <footer class="card-footer">
                 <div class="row">
                     <div class="col-md-12 text-right">
                         <button type="submit" class="btn btn-primary modal-confirm">ذخیره</button>
@@ -40,13 +49,6 @@
                 </div>
             </footer>
         </form>
-    </section>
+    </div>
 </div>
-
-<script>
-    $(document).ready(function () {
-        if (typeof ajaxComponents !== 'undefined' && $.isFunction(ajaxComponents))
-            ajaxComponents('#modalRole');
-    });
-</script>
-
+@endsection

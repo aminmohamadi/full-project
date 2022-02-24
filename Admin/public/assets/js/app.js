@@ -9771,3 +9771,70 @@ $(document).ready(function () {
 
     })
 });
+const handleChange = function() {
+    const fileUploader = document.querySelector('#input-file');
+    const getFile = fileUploader.files
+    if (getFile.length !== 0) {
+        const uploadedFile = getFile[0];
+        readFile(uploadedFile);
+    }
+}
+const readFile = function (uploadedFile) {
+    if (uploadedFile) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            const parent = document.querySelector('.preview-box');
+            parent.innerHTML = `<img class="preview-content" height="150" src=${reader.result} />`;
+        };
+
+        reader.readAsDataURL(uploadedFile);
+    }
+};
+const handleChange2 = function() {
+    const fileUploader = document.querySelector('#input-file2');
+    const getFile = fileUploader.files
+    if (getFile.length !== 0) {
+        const uploadedFile = getFile[0];
+        readFile2(uploadedFile);
+    }
+}
+const readFile2 = function (uploadedFile) {
+    if (uploadedFile) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            const parent = document.querySelector('#input-file2-preview-box');
+            parent.innerHTML = `<img class="preview-content" height="150" src=${reader.result} />`;
+        };
+
+        reader.readAsDataURL(uploadedFile);
+    }
+};
+
+tinymce.init({
+    selector: '#basic-conf',
+    height: 400,
+    directionality : "rtl",
+    plugins: [
+        'advlist autolink link image lists charmap print preview hr anchor pagebreak',
+        'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+        'table emoticons template paste help'
+    ],
+    toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | ' +
+        'bullist numlist outdent indent | link image | print preview media fullpage | ' +
+        'forecolor backcolor emoticons | help',
+    menu: {
+        favs: {title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons'}
+    },
+    menubar: 'favs file edit view insert format tools table help',
+    content_style: 'body { font-size:14px }'
+});
+$(".persian-date-picker").pDatepicker({
+    viewMode:'year',
+    timePicker : {
+        enabled :false
+    },
+    autoClose:true,
+    observer: true,
+    format: 'YYYY/MM/DD',
+});
+

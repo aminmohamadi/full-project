@@ -10,8 +10,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class FunctionalityController extends Controller
 {
-    public $indexAction="show-functionalities";
-    public $storeAction="store-functionalities";
+
     public function indexAction()
     {
         $allFunctionalities = Permissions::getAllAvailablePermissions();
@@ -50,28 +49,5 @@ class FunctionalityController extends Controller
             return response()->json(['status' => 'danger', 'message' => 'خطا در انجام عملیات', 'title' => 'خطا', 'icon' => 'check_box']);
 
         }
-    }
-    protected function allFunctionalities()
-    {
-        $controllers = [];
-        $controllerAddress = glob(app_path('Http\Controllers') . "\*Controller.php");
-        foreach ($controllerAddress as $controller) {
-            $classes = substr(basename($controller), 0, strlen(basename($controller)) - 4);
-            $strToLowerClassName = strtolower($classes);
-            $controllerName=substr($strToLowerClassName,0,-10);
-            $controllers[$controllerName] = [];
-            $reflectionClass = new \ReflectionClass('App\Http\Controllers\\' . $classes);
-            $methods = array_filter($reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC),function ($method) use ($reflectionClass) {
-                return  $method->class == $reflectionClass->getName();
-            });
-            foreach ($methods as $method) {
-                if (substr($method->name, -6, 6) == 'Action') {
-//                    $controllers[$controllerName][str_replace('Action', '', $method->name)] = [];
-                    $controllers[$controllerName][] = $controllerName.'.'.str_replace('Action', '', $method->name);
-                }
-            }
-        }
-        return $controllers;
-
     }
 }

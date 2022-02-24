@@ -36,6 +36,7 @@
                             <select class="form-control"
                                     name="route_name" id="route_name" required>
                                 <option>انتخاب کنید</option>
+                                <option value="#">والد</option>
                                 @foreach($items as $item)
                                     <option @if($menu->route_name === $item) selected @endif value="{{$item}}">{{$item}}</option>
                                 @endforeach

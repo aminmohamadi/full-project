@@ -45,13 +45,12 @@
                             </li><!--end nav-item-->
                         @else
                             <li class="nav-item">
-                                <a class="nav-link" href="#{{$item->name}}" data-bs-toggle="collapse" role="button"
-                                   aria-expanded="false" aria-controls="{{$item->name}}">
+                                <a class="nav-link" href="#sidebar{{$item->id}}" data-bs-toggle="collapse" role="button"
+                                   aria-expanded="false" aria-controls="sidebar{{$item->id}}">
                                     <i class="ti ti-{{$item->icon}} menu-icon"></i>
                                     <span> {{$item->name}} </span>
                                 </a>
-
-                                <div class="collapse " id="{{$item->name}}">
+                                <div class="collapse" id="sidebar{{$item->id}}">
                                     <ul class="nav flex-column">
                                         @foreach ($item->children as $child)
                                             <li class="nav-item">

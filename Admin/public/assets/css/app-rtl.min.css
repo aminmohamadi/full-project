@@ -1540,10 +1540,10 @@ mark {
   animation: 2s linear infinite spinner-border;
 } /*!
  * Waves v0.7.6
- * http://fian.my.id/Waves 
- * 
- * Copyright 2014-2018 Alfiana E. Sibuea and other contributors 
- * Released under the MIT license 
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014-2018 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
  * https://github.com/fians/Waves/blob/master/LICENSE */
 .waves-effect {
   position: relative;
@@ -2292,7 +2292,7 @@ mark {
 /* add */
 .form-check .form-check-input{
   float: right !important;
- 
+
 }
 .form-switch .form-check-input{
   margin-left: 0 !important;
@@ -4539,7 +4539,7 @@ a.badge:hover {
   position: absolute;
   left: 0px;
   }
- 
+
   /* add */
 .fc .fc-toolbar.fc-header-toolbar {
   margin-bottom: 1rem;
@@ -5036,7 +5036,6 @@ pre[class*="language-"] {
 }
 .preview-box .preview-content {
   width: auto;
-  height: 50px;
   max-width: 100%;
   border-radius: 5px;
 }

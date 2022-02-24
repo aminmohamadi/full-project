@@ -10,7 +10,7 @@
                         <img src="{{asset('assets/images/users\\').auth()->user()->image}}" alt="profile-user" class="rounded-circle me-2 thumb-sm" />
                         <div>
                             <span class="d-none d-md-block fw-semibold font-12">{{auth()->user()->getFullNameAttribute()}}<i class="mdi mdi-chevron-down"></i></span>
-                            <small class="d-none d-md-block font-11">{{auth()->user()->role->name}}</small>
+                            <small class="d-none d-md-block font-11">{{auth()->user()->role->description}}</small>
 
                         </div>
                     </div>

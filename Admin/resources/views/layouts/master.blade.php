@@ -9,10 +9,17 @@
     <div class="page-content-tab">
 
         <div class="container-fluid">
-            @include('layouts.partials.breadcrumb')
             @yield('content')
         </div>
-    @include('sweetalert::alert')
+        @include('sweetalert::alert')
+
+        @if ($errors->any())
+            @foreach($errors->all() as $error)
+                <?php
+                toast($error , 'error')
+                ?>
+            @endforeach
+        @endif
 
     @include('layouts.partials.footer')
     </div>

@@ -21,17 +21,15 @@
             </div><!--end card -body-->
         </div>
         <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">نتایج به دست آمده</h4>
-            </div><!--end card-header-->
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="card-title">منو ها</h5>
+                <a class="btn btn-primary" href="{{route('role.menu.create',$role->id)}}">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
             <div class="card-body">
                 <div class="card-body border">
                     <div class="table-responsive">
-                        <div class="right">
-                            <a href="{{route('role.menu.create',$role->id)}}" class="btn btn-primary">افزودن
-                                <i class="ti ti-plus"></i>
-                            </a>
-                        </div>
                         <table class="table table-striped mb-0">
 
                             <thead>
@@ -56,18 +54,17 @@
                                     </td>
                                     <td class="text-center"> {{$item->route_name}}</td>
                                     <td class="text-center">
-                                        <i class="material-icons">{{$item->icon}}</i>
+                                        <i class="ti ti-{{$item->icon}}"></i>
                                     </td>
                                     <td class="text-center">
                                         <a class="btn btn-icon simple-ajax-modal"
                                            href="{{route('role.menu.edit',$item->id)}}">
-                                            <i class="las la-pen text-warning font-25 "></i>
-
+                                            <i class="las la-pen text-warning font-30 "></i>
 
                                         </a>
                                         <a type="button" data-bs-toggle="modal" data-bs-target="#delete-item" oncontextmenu="return false" data-action="{{route('role.menu.destroy',$item->id)}}"
                                            data-id="{{$item->id}}" data-method="delete" class="btn btn-icon modal-with-zoom-anim">
-                                            <i class="las la-trash-alt text-danger font-25"></i>
+                                            <i class="las la-trash-alt text-danger font-30"></i>
                                         </a>
                                     </td>
                                 </tr>
