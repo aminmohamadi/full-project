@@ -123,6 +123,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Admin/vendor/cviebrock/eloquent-sluggable" />
       <excludeFolder url="file://$MODULE_DIR$/Admin/vendor/cocur/slugify" />
       <excludeFolder url="file://$MODULE_DIR$/Admin/vendor/yoeunes/toastr" />
+      <excludeFolder url="file://$MODULE_DIR$/Admin/vendor/artesaos/seotools" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

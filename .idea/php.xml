@@ -116,6 +116,7 @@
       <path value="$PROJECT_DIR$/Admin/vendor/cviebrock/eloquent-sluggable" />
       <path value="$PROJECT_DIR$/Admin/vendor/cocur/slugify" />
       <path value="$PROJECT_DIR$/Admin/vendor/yoeunes/toastr" />
+      <path value="$PROJECT_DIR$/Admin/vendor/artesaos/seotools" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

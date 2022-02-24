@@ -2,7 +2,8 @@
 <footer class="footer text-center text-sm-start">
     &copy; <script>
         document.write(new Date().getFullYear())
-    </script> امین محمدی
+    </script>
+    {{\Models\Option::get('site_name')}}
 </footer>
 <div class="modal fade" id="delete-modal" data-backdrop="static" tabindex="-1" role="dialog"
      aria-labelledby="deleteItem" aria-hidden="true">

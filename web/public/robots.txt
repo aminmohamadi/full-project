@@ -1,0 +1,7 @@
+user-agent: *
+disallow: *?*
+disallow: /search?q=*
+Allow: */assets/*.js
+Allow: */assets/*.css
+
+Sitemap: https://www.digikala.com/sitemap.xml
