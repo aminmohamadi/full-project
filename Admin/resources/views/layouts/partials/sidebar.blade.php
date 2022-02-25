@@ -35,7 +35,7 @@
                     @foreach ($menu as $item)
                         @if($item->children->count() == 0)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route($item->route_name)}}">
+                                <a class="nav-link" href="{{$item->route_name == "#" ? "#" : route($item->route_name)}}">
                                     @if($item->icon)
                                         <i class="ti ti-{{$item->icon}} menu-icon"></i><span> {{$item->name}}</span>
                                     @else

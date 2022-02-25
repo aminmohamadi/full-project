@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Role extends Model
 {
     use Sluggable;
+    public $timestamps = false;
     protected $fillable =[
       'name',
       'slug',
