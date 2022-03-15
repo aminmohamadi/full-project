@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[App\Http\Controllers\IndexController::class ,'index']);
 Route::get('sitemap',[App\Http\Controllers\SitemapController::class ,'index']);
 Route::get('sitemap-articles',[App\Http\Controllers\SitemapController::class ,'articles']);
 Route::get('sitemap-services',[App\Http\Controllers\SitemapController::class ,'services']);
 Route::get('sitemap-projects',[App\Http\Controllers\SitemapController::class ,'projects']);
+Route::get('/',function (){
+    return view('index.index');
+});

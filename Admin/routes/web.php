@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//$data = <<<EOF
-//RewriteEngine on
-//RewriteRule …
-//EOF;
-//file_put_contents(public_path('.htaccess'), $data);
 Route::namespace('Auth')->group(function () {
     Route::post('login/otp', [\App\Http\Controllers\Auth\LoginWithOtp::class, 'login'])->name('two_factor_auth_post');
     Route::get('login/otp', [\App\Http\Controllers\Auth\LoginWithOtp::class, 'challenge'])->name('two_factor_auth_get');
